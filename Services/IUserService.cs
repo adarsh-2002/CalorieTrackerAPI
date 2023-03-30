@@ -2,12 +2,15 @@
 
 namespace CalorieTrackerAPI.Services
 {
-    public interface IUserService<User>
+    public interface IUserService<U>
     {
-        List<User> GetAllUsers();
-        User GetUser(int id);
-        void AddUser(User u);
-        void UpdateUser(int id, User u);
+        List<U> GetAllUsers();
+        U GetUser(int id);
+        void AddUser(U u);
+        void UpdateUser(int id, U u);
         void DeleteUser(int id);
+        U Auth(LoginModel login);
+
+
     }
 }

@@ -32,6 +32,7 @@ namespace CalorieTrackerAPI.Repositories
             return _context.FoodEntries.Find(id);
         }
 
+
         public void UpdateEntry(int id, FoodEntry u)
         {
             _context.FoodEntries.Update(u);

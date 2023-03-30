@@ -13,6 +13,8 @@ namespace CalorieTrackerAPI.Controllers
     public class LoginController : ControllerBase
     {
         private readonly IUserService<User> userService;
+        static readonly log4net.ILog _log4net = log4net.LogManager.GetLogger(typeof(LoginController));
+
         public LoginController(IUserService<User> us) {
             userService = us;
         }
@@ -21,22 +23,11 @@ namespace CalorieTrackerAPI.Controllers
         [HttpPost]
         public IActionResult Post(LoginModel lm)
         {
-            if (lm.Email != null && lm.Password != null)
+            User u = new User();
+            u = userService.Auth(lm);
+            if (u!=null)
             {
-                var result = userService.GetAllUsers().SingleOrDefault(x => x.Email == lm.Email);
-                if (result != null)
-                {
-                    string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                                               password: lm.Password,
-                                               salt: result.salt,
-                                               prf: KeyDerivationPrf.HMACSHA256,
-                                               iterationCount: 1000,
-                                               numBytesRequested: 256 / 8));
-                    if (hashed == result.Password)
-                    {
-                        return Ok(result);
-                    }
-                }
+                return Ok(u);
             }
             return Unauthorized();
         }

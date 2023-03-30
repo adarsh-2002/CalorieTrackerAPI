@@ -26,7 +26,7 @@ namespace CalorieTrackerAPI.Controllers
         [HttpGet("getFoodList")]
         public async Task<ActionResult<IEnumerable<FoodEntry>>> GetFoodEntries(int uid)
         {
-            return _entryService.GetAllEntries(uid);
+            return _entryService.GetAllEntries(uid).OrderByDescending(x=>x.Date).ToList();
         }
 
         // GET: api/FoodEntries/5

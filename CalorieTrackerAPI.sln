@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTrackerAPI", "CalorieTrackerAPI.csproj", "{0D4C0D24-C451-4629-BC12-5DA8FE5DD831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalorieTrackerAPI", "CalorieTrackerAPI.csproj", "{0D4C0D24-C451-4629-BC12-5DA8FE5DD831}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTrackerAPITest", "..\CalorieTrackerAPITest\CalorieTrackerAPITest.csproj", "{CCBFE40A-AD6C-4B6D-A955-DF8430810EFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0D4C0D24-C451-4629-BC12-5DA8FE5DD831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D4C0D24-C451-4629-BC12-5DA8FE5DD831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D4C0D24-C451-4629-BC12-5DA8FE5DD831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBFE40A-AD6C-4B6D-A955-DF8430810EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBFE40A-AD6C-4B6D-A955-DF8430810EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBFE40A-AD6C-4B6D-A955-DF8430810EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBFE40A-AD6C-4B6D-A955-DF8430810EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

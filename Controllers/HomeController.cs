@@ -62,7 +62,7 @@ namespace CalorieTrackerAPI.Controllers
                     dwm.TotalWCals = item.TotalWCal;
                     WorkoutObj.Add(dwm);
                 }
-                DashboardModel model = new DashboardModel(FoodObj, WorkoutObj);
+                DashboardModel model = new DashboardModel(FoodObj.Take(10), WorkoutObj.Take(10));
                 return Ok(model);
             }
             return Unauthorized();

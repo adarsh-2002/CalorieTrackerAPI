@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using CalorieTrackerAPI.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Security.Cryptography;
-using static System.Collections.Specialized.BitVector32;
 using CalorieTrackerAPI.Services;
 
 namespace CalorieTrackerAPI.Controllers
@@ -28,7 +27,7 @@ namespace CalorieTrackerAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            _log4net.Info("Get all method is called");
+            _log4net.Info("Get all users method is called");
             return userService.GetAllUsers();
         }
 
@@ -107,6 +106,7 @@ namespace CalorieTrackerAPI.Controllers
                 try
                 {
                     userService.AddUser(user);
+                    _log4net.Info(user.Email + " has signed up!");
                     return Ok();
                 }
                 catch (DbUpdateException e)

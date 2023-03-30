@@ -26,7 +26,7 @@ namespace CalorieTrackerAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Workout>>> GetWorkouts(int uid)
         {
-            return _service.GetAllEntries(uid);
+            return _service.GetAllEntries(uid).OrderByDescending(x=>x.WDateTime).ToList();
         }
 
         // GET: api/Workouts/5
